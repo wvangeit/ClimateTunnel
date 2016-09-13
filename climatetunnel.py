@@ -30,7 +30,18 @@ ax = fig.add_subplot(1, 1, 1, projection='polar')
 # ax.set_xticklabels([])
 
 line, = ax.plot([], [], 'r.-', alpha=.3, linewidth=3, ms=10, mfc='black')
-title = ax.text(0.0, 0.0, '', fontsize=40, transform=ax.transAxes)
+title = ax.text(-0.11, 0.0, '', fontsize=50, transform=ax.transAxes)
+caption1 = ax.text(-0.11,
+                   1.1,
+                   'Global land/sea surface temperature anomaly (1880-2016)',
+                   fontsize=25,
+                   transform=ax.transAxes)
+caption2 = ax.text(-0.11,
+                   1.025,
+                   'data: http://data.giss.nasa.gov/gistemp\n'
+                   'code: https://github.com/wvangeit/ClimateTunnel',
+                   fontsize=10,
+                   transform=ax.transAxes)
 
 circle_r = numpy.zeros(50)
 circle_theta = 2.0 * numpy.pi * numpy.linspace(0, 1, len(circle_r))
