@@ -124,4 +124,4 @@ ani = animation.FuncAnimation(
     repeat=False)
 
 ani.save('gifs/climate.gif', dpi=80, writer='imagemagick')
-# plt.show()
+plt.show()
