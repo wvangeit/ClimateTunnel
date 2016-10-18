@@ -4,6 +4,7 @@ import os
 import numpy
 
 import matplotlib.animation as animation
+import matplotlib.collections as collections
 import matplotlib.pyplot as plt
 
 plt.style.use('ggplot')
@@ -29,7 +30,16 @@ ax = fig.add_subplot(1, 1, 1, projection='polar')
 # ax.set_yticklabels([])
 # ax.set_xticklabels([])
 
-line, = ax.plot([], [], 'r.-', alpha=.3, linewidth=3, ms=10, mfc='black')
+marker, = ax.plot([], [], '.', alpha=.3, ms=10, mfc='black')
+line = collections.LineCollection(
+    [],
+    linewidth=10,
+    alpha=.2,
+    cmap=plt.get_cmap('afmhot'),
+    norm=plt.Normalize(
+        -1.5,
+        3))
+ax.add_collection(line)
 title = ax.text(-0.11, 0.0, '', fontsize=50, transform=ax.transAxes)
 caption1 = ax.text(-0.11,
                    1.1,
@@ -75,7 +85,7 @@ ax2.set_ylim([-1.5, 1.5])
 def init():
     """Init"""
 
-    line.set_data([], [])
+    line.set_segments([])
     title.set_text('')
     return line, title
 
@@ -105,8 +115,15 @@ def animate(t):
                 numpy.linspace(0, 1, len(r), endpoint=False)
             thetas = numpy.append(thetas, theta)
 
+        points = numpy.array([thetas, rs]).T.reshape(-1, 1, 2)
+        segments = numpy.concatenate([points[:-1], points[1:]], axis=1)
+
         title.set_text(str(years[t]))
-        line.set_data(thetas, rs)
+        line.set_segments(segments)
+        line.set_array(rs)
+        marker.set_data(thetas, rs)
+        # numpy.linspace(0, len(years), len(thetas)))
+
         # line2.set_data(xs, ys)
 
     return line, title
@@ -117,7 +134,7 @@ ani = animation.FuncAnimation(
     numpy.arange(
         0,
         len(data) +
-        20),
+        50),
     init,
     interval=len(data),
     blit=False,
