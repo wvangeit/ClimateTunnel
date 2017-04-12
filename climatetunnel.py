@@ -11,7 +11,6 @@ plt.style.use('ggplot')
 
 data_dir = 'data'
 
-# csv_filename = 'GLB.Ts.csv'
 csv_filename = os.path.join(data_dir, 'GLB.Ts+dSST.csv')
 data = numpy.genfromtxt(
     csv_filename,
@@ -25,10 +24,7 @@ years = [int(y[0]) for y in data]
 
 fig = plt.figure(figsize=(12, 12))
 
-# fig, axes = plt.subplots(2, 1, subplot_kw=dict(projection='polar'))
 ax = fig.add_subplot(1, 1, 1, projection='polar')
-# ax.set_yticklabels([])
-# ax.set_xticklabels([])
 
 marker, = ax.plot([], [], '.', alpha=.3, ms=10, mfc='black')
 line = collections.LineCollection(
@@ -43,7 +39,7 @@ ax.add_collection(line)
 title = ax.text(-0.11, 0.0, '', fontsize=50, transform=ax.transAxes)
 caption1 = ax.text(-0.11,
                    1.1,
-                   'Global land/sea surface temperature anomaly (1880-2016)',
+                   'Global land/sea surface temperature anomaly (1880-2017)',
                    fontsize=25,
                    transform=ax.transAxes)
 caption2 = ax.text(-0.11,
@@ -56,7 +52,6 @@ caption2 = ax.text(-0.11,
 circle_r = numpy.zeros(50)
 circle_theta = 2.0 * numpy.pi * numpy.linspace(0, 1, len(circle_r))
 ax.plot(circle_theta, circle_r, 'k')
-# ax.set_rmax(3.0)
 ax.set_ylim([-1.5, 1.5])
 ax.set_xticks(2.0 * numpy.pi * numpy.linspace(0, 1, 12, endpoint=False))
 ax.set_xticklabels(['Jan',
@@ -73,14 +68,6 @@ ax.set_xticklabels(['Jan',
                     'Dec'], fontsize=20)
 ax.set_yticks([-1.5, 1.5])
 ax.set_yticklabels(['-1.5 C', '+1.5 C'], fontsize=20)
-
-'''
-ax2 = fig.add_subplot(1, 2, 2)
-line2, = ax2.plot([], [], 'r')
-ax2.plot(numpy.zeros(12), 'k')
-ax2.set_ylim([-1.5, 1.5])
-'''
-
 
 def init():
     """Init"""
@@ -122,9 +109,6 @@ def animate(t):
         line.set_segments(segments)
         line.set_array(rs)
         marker.set_data(thetas, rs)
-        # numpy.linspace(0, len(years), len(thetas)))
-
-        # line2.set_data(xs, ys)
 
     return line, title
 
@@ -141,4 +125,4 @@ ani = animation.FuncAnimation(
     repeat=False)
 
 ani.save('gifs/climate.gif', dpi=80, writer='imagemagick')
-plt.show()
+# plt.show()
