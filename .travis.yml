@@ -1,6 +1,8 @@
 language: python
 python:
     - "2.7"
+sudo: false
+dist: trusty
 install: "pip install pip --upgrade"
 script: make plot
 deploy:
