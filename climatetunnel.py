@@ -129,5 +129,10 @@ ani = animation.FuncAnimation(
     blit=False,
     repeat=False)
 
+print "Saving climate gif ..."
 ani.save('gifs/climate.gif', dpi=80, writer='imagemagick')
+
+print "Saving climate mp4 ..."
+ani.save('mp4/climate.mp4', dpi=80, writer='ffmpeg')
+
 # plt.show()

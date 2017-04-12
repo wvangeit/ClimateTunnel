@@ -132,5 +132,9 @@ ani = animation.FuncAnimation(
     blit=False,
     repeat=False)
 
+print "Saving seaice gif ..."
 ani.save('gifs/seaice.gif', dpi=80, writer='imagemagick')
+
+print "Saving seaice mp4 ..."
+ani.save('mp4/seaice.mp4', dpi=80, writer='ffmpeg')
 # plt.show()

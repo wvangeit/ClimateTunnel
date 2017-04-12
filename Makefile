@@ -1,5 +1,6 @@
 clean:
-	rm -rf gifs/climate.gif
+	rm -rf gifs/*.gif
+	rm -rf mp4/*.mp4
 	rm -rf data/GLB.Ts+dSST.csv
 plot_temp:
 	curl -o data/GLB.Ts+dSST.csv https://data.giss.nasa.gov/gistemp/tabledata_v3/GLB.Ts+dSST.csv
