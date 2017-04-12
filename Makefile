@@ -9,5 +9,5 @@ plot_ice:
 	gunzip -f data/nsidc_global_nt_final_and_nrt.txt.gz
 	python seaicetunnel.py
 requirements:
-	pip install -r requirements
+	pip install -r requirements.txt
 plot: clean requirements plot_temp plot_ice
