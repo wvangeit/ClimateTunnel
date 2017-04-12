@@ -24,7 +24,6 @@ data = numpy.genfromtxt(
     missing_values=['***'],
     filling_values=[float('nan')])
 
-print data
 years = [int(y[0]) for y in data]
 
 fig = plt.figure(figsize=(12, 12))
