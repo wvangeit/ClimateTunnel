@@ -8,6 +8,8 @@ import datetime
 import numpy
 import pandas
 
+import matplotlib
+matplotlib.use('Agg')
 
 import matplotlib.animation as animation
 import matplotlib.collections as collections

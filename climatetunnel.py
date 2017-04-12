@@ -3,9 +3,14 @@
 import os
 import numpy
 
+import matplotlib
+
+matplotlib.use('Agg')
+
 import matplotlib.animation as animation
 import matplotlib.collections as collections
 import matplotlib.pyplot as plt
+
 
 plt.style.use('ggplot')
 
