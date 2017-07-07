@@ -46,7 +46,7 @@ thetas = numpy.array([float(x) / 365 * 2 * numpy.pi
 
 areas = data['area'].as_matrix()
 
-fig = plt.figure(figsize=(12, 12))
+fig = plt.figure(figsize=(9, 9))
 
 ax = fig.add_subplot(1, 1, 1, projection='polar')
 
@@ -126,14 +126,13 @@ def animate(t):
 ani = animation.FuncAnimation(
     fig,
     animate,
-    numpy.arange(len(unique_years) + 20),
-    init,
-    interval=200,
-    blit=False,
+    frames=len(unique_years)+10,
+    init_func=init,
+    blit=True,
     repeat=False)
 
 print "Saving seaice gif ..."
-ani.save('gifs/seaice.gif', dpi=80, writer='imagemagick')
+ani.save('gifs/seaice.gif', dpi=60, writer='imagemagick')
 
 # print "Saving seaice mp4 ..."
 # ani.save('mp4/seaice.mp4', dpi=80, writer='ffmpeg')

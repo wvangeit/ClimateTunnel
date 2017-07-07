@@ -26,7 +26,7 @@ data = numpy.genfromtxt(
 
 years = [int(y[0]) for y in data]
 
-fig = plt.figure(figsize=(12, 12))
+fig = plt.figure(figsize=(9, 9))
 
 ax = fig.add_subplot(1, 1, 1, projection='polar')
 
@@ -44,7 +44,7 @@ title = ax.text(-0.11, 0.0, '', fontsize=50, transform=ax.transAxes)
 caption1 = ax.text(-0.11,
                    1.1,
                    'Global land/sea surface temperature anomaly (1880-2017)',
-                   fontsize=25,
+                   fontsize=20,
                    transform=ax.transAxes)
 caption2 = ax.text(-0.11,
                    1.025,
@@ -120,17 +120,13 @@ def animate(t):
 ani = animation.FuncAnimation(
     fig,
     animate,
-    numpy.arange(
-        0,
-        len(data) +
-        50),
-    init,
-    interval=len(data),
-    blit=False,
+    init_func=init,
+    frames=len(data)+10,
+    blit=True,
     repeat=False)
 
 print "Saving climate gif ..."
-ani.save('gifs/climate.gif', dpi=80, writer='imagemagick')
+ani.save('gifs/climate.gif', dpi=60, fps=10, writer='imagemagick')
 
 
 # print "Saving climate mp4 ..."
