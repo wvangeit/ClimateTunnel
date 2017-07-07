@@ -73,6 +73,7 @@ ax.set_xticklabels(['Jan',
 ax.set_yticks([-1.5, 1.5])
 ax.set_yticklabels(['-1.5 C', '+1.5 C'], fontsize=20)
 
+
 def init():
     """Init"""
 
@@ -131,7 +132,8 @@ ani = animation.FuncAnimation(
 print "Saving climate gif ..."
 ani.save('gifs/climate.gif', dpi=80, writer='imagemagick')
 
-print "Saving climate mp4 ..."
-ani.save('mp4/climate.mp4', dpi=80, writer='ffmpeg')
+
+# print "Saving climate mp4 ..."
+# ani.save('mp4/climate.mp4', dpi=80, writer='ffmpeg')
 
 # plt.show()
