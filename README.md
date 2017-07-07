@@ -2,7 +2,7 @@
 
 # ClimateTunnel
 
-![Global-mean monthly, polar plot](https://wvangeit.github.io/ClimateTunnel/climate.gif){:height="50%" width="50%"}
+![Global-mean monthly, polar plot](https://wvangeit.github.io/ClimateTunnel/climate.gif =50x50)
 
 Polar plot of global mean monthly temperature anomaly (land and sea surface) for the period 1880-2016.
 
