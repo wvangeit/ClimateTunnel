@@ -2,7 +2,7 @@
 
 # ClimateTunnel
 
-![Global-mean monthly, polar plot](https://wvangeit.github.io/ClimateTunnel/climate.mp4)
+![Global-mean monthly, polar plot](https://wvangeit.github.io/ClimateTunnel/gifs/climate.gif)
 
 Polar plot of global mean monthly temperature anomaly (land and sea surface) for the period 1880-2016.
 
@@ -12,7 +12,7 @@ All data obtained from [GISS Surface Temperature Analysis website](http://data.g
 
 # Sea Ice
 
-![Global sea ice area monthly, polar plot](https://wvangeit.github.io/ClimateTunnel/seaice.mp4)
+![Global sea ice area monthly, polar plot](https://wvangeit.github.io/ClimateTunnel/gifs/seaice.gif)
 
 Polar plot of global sea ice area (land and sea surface) for the period 1978-2016.
 
