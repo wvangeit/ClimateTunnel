@@ -7,13 +7,6 @@ install: "pip install pip --upgrade"
 script: make plot
 deploy:
   provider: pages
-  local_dir: mp4
-  skip_cleanup: true
-  github_token: $GITHUB_TOKEN
-  on:
-    branch: master
-deploy:
-  provider: pages
   local_dir: gifs
   skip_cleanup: true
   github_token: $GITHUB_TOKEN
