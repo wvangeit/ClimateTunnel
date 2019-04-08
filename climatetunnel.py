@@ -43,7 +43,7 @@ ax.add_collection(line)
 title = ax.text(-0.11, 0.0, '', fontsize=50, transform=ax.transAxes)
 caption1 = ax.text(-0.11,
                    1.1,
-                   'Global land/sea surface temperature anomaly (1880-2017)',
+                   'Global land/sea surface temperature anomaly',
                    fontsize=20,
                    transform=ax.transAxes)
 caption2 = ax.text(-0.11,
