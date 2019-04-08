@@ -126,7 +126,7 @@ def animate(t):
 ani = animation.FuncAnimation(
     fig,
     animate,
-    frames=len(unique_years)+10,
+    frames=len(unique_years)+30,
     init_func=init,
     blit=True,
     repeat=False)
