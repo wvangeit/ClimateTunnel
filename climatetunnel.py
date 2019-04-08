@@ -121,7 +121,7 @@ ani = animation.FuncAnimation(
     fig,
     animate,
     init_func=init,
-    frames=len(data)+10,
+    frames=len(data)+50,
     blit=True,
     repeat=False)
 
