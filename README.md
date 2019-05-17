@@ -18,4 +18,4 @@ Polar plot of global sea ice area (land and sea surface) for the period 1978-pre
 
 Center and circumference of plotting area represent 12 - 24 million km2 respectively.
 
-All data obtained from [ArtischePinguin](https://sites.google.com/site/arctischepinguin/home), [raw file](https://sites.google.com/site/arctischepinguin/home/sea-ice-extent-area/data/nsidc_global_nt_final_and_nrt.txt.gz)
+All data obtained from [ArctischePinguin](https://sites.google.com/site/arctischepinguin/home), [raw file](https://sites.google.com/site/arctischepinguin/home/sea-ice-extent-area/data/nsidc_global_nt_final_and_nrt.txt.gz)
