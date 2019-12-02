@@ -12,7 +12,7 @@ All data obtained from [GISS Surface Temperature Analysis website](http://data.g
 
 # Co2Tunnel
 
-![Global-mean monthly CO2, polar plot](https://github.com/wvangeit/ClimateTunnel/blob/gh-pages/co2.gif)
+![Global-mean monthly CO2, polar plot](https://wvangeit.github.io/ClimateTunnel/co2.gif)
 
 Polar plot of global mean monthly CO2 dry air mole fraction in ppm for the period 1980-present.
 
