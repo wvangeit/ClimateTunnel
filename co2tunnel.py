@@ -15,9 +15,21 @@ plt.style.use('ggplot')
 
 data_dir = 'data'
 
-csv_filename = os.path.join(data_dir, 'co2_mm_gl.txt')
+
+import ftplib
+ftp = ftplib.FTP('aftp.cmdl.noaa.gov')
+ftp.login()
+ftp.cwd('/products/trends/co2/')
+
+
+csv_filename = 'co2_mm_gl.txt'
+csv_path = os.path.join(data_dir, csv_filename)
+csv_file = open(csv_path, 'wb')
+
+ftp.retrbinary('RETR ' + csv_filename, csv_file.write)
+
 data = numpy.genfromtxt(
-    csv_filename,
+    csv_path,
     filling_values=[float('nan')])
 years = [int(y[0]) for y in data]
 
@@ -114,7 +126,7 @@ ani = animation.FuncAnimation(
     fig,
     animate,
     init_func=init,
-    frames=10,  # len(data) + 10,
+    frames=len(data) + 10,
     blit=True,
     repeat=False)
 
