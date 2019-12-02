@@ -16,17 +16,17 @@ plt.style.use('ggplot')
 data_dir = 'data'
 
 
-import ftplib
-ftp = ftplib.FTP('aftp.cmdl.noaa.gov')
-ftp.login()
-ftp.cwd('/products/trends/co2/')
+# import ftplib
+# ftp = ftplib.FTP('aftp.cmdl.noaa.gov')
+# ftp.login()
+# ftp.cwd('/products/trends/co2/')
 
 
 csv_filename = 'co2_mm_gl.txt'
 csv_path = os.path.join(data_dir, csv_filename)
-csv_file = open(csv_path, 'wb')
+# csv_file = open(csv_path, 'wb')
 
-ftp.retrbinary('RETR ' + csv_filename, csv_file.write)
+# ftp.retrbinary('RETR ' + csv_filename, csv_file.write)
 
 data = numpy.genfromtxt(
     csv_path,
