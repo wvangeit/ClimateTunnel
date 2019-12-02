@@ -15,4 +15,4 @@ plot_co2: clean
 	python co2tunnel.py
 requirements:
 	pip install -r requirements.txt
-plot: clean requirements plot_temp plot_ice
+plot: clean requirements plot_temp plot_ice plot_co2

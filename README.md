@@ -2,7 +2,7 @@
 
 # ClimateTunnel
 
-![Global-mean monthly temperature anomaly, polar plot](https://github.com/wvangeit/ClimateTunnel/blob/gh-pages/climate.gif)
+![Global-mean monthly temperature anomaly, polar plot](https://wvangeit.github.io/ClimateTunnel/climate.gif)
 
 Polar plot of global mean monthly temperature anomaly (land and sea surface) for the period 1880-present.
 
