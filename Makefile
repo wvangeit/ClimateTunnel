@@ -11,7 +11,7 @@ plot_ice: clean
 	gunzip -f data/nsidc_global_nt_final_and_nrt.txt.gz
 	python seaicetunnel.py
 plot_co2: clean
-	curl -L -o data/co2_mm_gl.txt ftp://aftp.cmdl.noaa.gov/products/trends/co2/co2_mm_gl.txt
+	curl -L -o data/co2_mm_gl.txt ftp://ftp.cmdl.noaa.gov/products/trends/co2/co2_mm_gl.txt
 	python co2tunnel.py
 requirements:
 	pip install -r requirements.txt
