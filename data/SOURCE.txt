@@ -1,3 +1,0 @@
-This data was downloaded on 2016/09/13
-from 
-http://data.giss.nasa.gov/gistemp/

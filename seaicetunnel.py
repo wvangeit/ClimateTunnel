@@ -108,7 +108,7 @@ def animate(t):
     if t < len(unique_years):
         t_year = unique_years[t]
 
-        print t_year
+        print(t_year)
 
         t_thetas = thetas[numpy.where(years <= t_year)]
         t_rs = areas[numpy.where(years <= t_year)]
@@ -119,21 +119,17 @@ def animate(t):
         title.set_text(str(t_year))
         line.set_segments(segments)
         line.set_array(t_rs)
-        # marker.set_data(t_thetas, t_rs)
 
     return line, title
+
 
 ani = animation.FuncAnimation(
     fig,
     animate,
-    frames=len(unique_years)+30,
+    frames=len(unique_years) + 30,
     init_func=init,
     blit=True,
     repeat=False)
 
-print "Saving seaice gif ..."
+print("Saving seaice gif ...")
 ani.save('gifs/seaice.gif', dpi=60, writer='imagemagick')
-
-# print "Saving seaice mp4 ..."
-# ani.save('mp4/seaice.mp4', dpi=80, writer='ffmpeg')
-# plt.show()

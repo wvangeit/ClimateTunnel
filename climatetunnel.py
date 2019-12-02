@@ -92,7 +92,7 @@ def animate(t):
         rs = numpy.array([])
         thetas = numpy.array([])
 
-        print years[t]
+        print(years[t])
         for row in range(t + 1):
             r = data[row][1:13]
             rs = numpy.append(rs, r)
@@ -117,19 +117,14 @@ def animate(t):
 
     return line, title
 
+
 ani = animation.FuncAnimation(
     fig,
     animate,
     init_func=init,
-    frames=len(data)+50,
+    frames=len(data) + 50,
     blit=True,
     repeat=False)
 
-print "Saving climate gif ..."
+print("Saving climate gif ...")
 ani.save('gifs/climate.gif', dpi=60, fps=10, writer='imagemagick')
-
-
-# print "Saving climate mp4 ..."
-# ani.save('mp4/climate.mp4', dpi=80, writer='ffmpeg')
-
-# plt.show()
