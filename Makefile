@@ -3,6 +3,7 @@ clean:
 	rm -rf data
 	mkdir gifs
 	mkdir data
+	mkdir frames
 plot_temp: clean
 	curl -o data/GLB.Ts+dSST.csv https://data.giss.nasa.gov/gistemp/tabledata_v3/GLB.Ts+dSST.csv
 	python climatetunnel.py

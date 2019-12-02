@@ -100,6 +100,7 @@ def animate(t):
         thetas = numpy.array([])
 
         year = years[t]
+        print(year)
 
         for it in range(t):
             r = data[it][3]
