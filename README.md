@@ -10,6 +10,7 @@ Black circle represent 0 anomaly, center and circumference of plotting area repr
 
 All data obtained from [GISS Surface Temperature Analysis website](http://data.giss.nasa.gov/gistemp/)
 
+<!--
 # Co2Tunnel
 
 ![Global-mean monthly CO2, polar plot](https://wvangeit.github.io/ClimateTunnel/co2.gif)
@@ -19,6 +20,7 @@ Polar plot of global mean monthly CO2 dry air mole fraction in ppm for the perio
 Center and circumference of plotting area represent 320 and 420 ppm respectively.
 
 All data obtained from [NOAA Earth System Research Laboratory](https://www.esrl.noaa.gov/gmd/ccgg/trends/global.html)
+-->
 
 # Sea Ice
 
