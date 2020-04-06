@@ -1,6 +1,7 @@
 clean:
 	rm -rf gifs
 	rm -rf data
+	rm -rf frames
 	mkdir gifs
 	mkdir data
 	mkdir frames
