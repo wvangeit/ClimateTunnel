@@ -44,7 +44,7 @@ days_from_1jan = [(x.date() - datetime.date(x.year, 1, 1)).days
 thetas = numpy.array([float(x) / 365 * 2 * numpy.pi
                       for x in days_from_1jan])
 
-areas = data['area'].values()
+areas = data['area'].values
 
 fig = plt.figure(figsize=(9, 9))
 
