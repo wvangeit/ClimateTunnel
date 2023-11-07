@@ -1,7 +1,8 @@
-name: Create climate plot
+name: Create plot
 
 on:
-  push:
+  pull_request:
+  workflow_call:
      
 jobs:
   build:
