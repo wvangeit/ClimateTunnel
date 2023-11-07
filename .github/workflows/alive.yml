@@ -1,0 +1,37 @@
+name: Cron
+
+on:
+  schedule:
+    - cron: '0 2 * * *'
+
+jobs:
+  call-build-workflow:
+    uses: wvangeit/ClimateTunnel/.github/workflows/build.yml@master
+  
+  keep-workflow-alive:
+    name: Make sure workflow stays alive
+    runs-on: ubuntu-latest
+    permission:
+      contents: write
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: master
+
+      - name: Get date from 30 days ago
+        run: |
+          datethen=`date -d "-30 days" --utc +%FT%TZ`
+          echo "datelimit=$datethen" >> $GITHUB_ENV
+
+      - name: setup git config
+        if: github.event.repository.pushed_at <= env.datelimit
+        run: |
+          # setup the username and email.
+          git config user.name "Keep alive bot"
+          git config user.email "<>"
+
+      - name: commit IF last commit is older than 30 days
+        if: github.event.repository.pushed_at <= env.datelimit
+        run: |
+          git commit -m "Empty commit to keep the gihub workflows alive" --allow-empty
+          git push origin master
