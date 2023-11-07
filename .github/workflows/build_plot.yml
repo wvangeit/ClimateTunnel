@@ -1,0 +1,14 @@
+name: Create plot
+
+on:
+  pull_request:
+  workflow_call:
+     
+jobs:
+  build:
+    name: Build plot
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: make
+        run: make plot
