@@ -1,0 +1,13 @@
+name: Create climate plot
+
+on:
+  push:
+     
+jobs:
+  build:
+    name: Build plot
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: make
+        run: make plot
