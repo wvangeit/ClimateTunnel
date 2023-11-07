@@ -6,13 +6,11 @@ on:
 
 jobs:
   call-build-workflow:
-    uses: wvangeit/ClimateTunnel/.github/workflows/build.yml@master
+    uses: wvangeit/ClimateTunnel/.github/workflows/deploy_plot.yml@master
   
   keep-workflow-alive:
     name: Make sure workflow stays alive
     runs-on: ubuntu-latest
-    permission:
-      contents: write
     steps:
       - uses: actions/checkout@v4
         with:
