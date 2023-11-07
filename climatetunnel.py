@@ -38,9 +38,9 @@ line = collections.LineCollection(
     cmap=plt.get_cmap('afmhot'),
     norm=plt.Normalize(
         -1.5,
-        3))
+        4))
 ax.add_collection(line)
-title = ax.text(-0.11, 0.0, '', fontsize=50, transform=ax.transAxes)
+title = ax.text(-0.13, 0.0, '', fontsize=50, transform=ax.transAxes)
 caption1 = ax.text(-0.11,
                    1.1,
                    'Global land/sea surface temperature anomaly',
@@ -56,7 +56,7 @@ caption2 = ax.text(-0.11,
 circle_r = numpy.zeros(50)
 circle_theta = 2.0 * numpy.pi * numpy.linspace(0, 1, len(circle_r))
 ax.plot(circle_theta, circle_r, 'k')
-ax.set_ylim([-1.5, 1.5])
+ax.set_ylim([-1.5, 2.0])
 ax.set_xticks(2.0 * numpy.pi * numpy.linspace(0, 1, 12, endpoint=False))
 ax.set_xticklabels(['Jan',
                     'Feb',
@@ -122,9 +122,9 @@ ani = animation.FuncAnimation(
     fig,
     animate,
     init_func=init,
-    frames=len(data) + 50,
+    frames=len(data) + 150,
     blit=True,
     repeat=False)
 
 print("Saving climate gif ...")
-ani.save('gifs/climate.gif', dpi=60, fps=10, writer='imagemagick')
+ani.save('gifs/climate.gif', dpi=60, fps=20, writer='imagemagick')
