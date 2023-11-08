@@ -50,7 +50,7 @@ ax.add_collection(line)
 title = ax.text(-0.11, 0.0, '', fontsize=50, transform=ax.transAxes)
 caption1 = ax.text(-0.11,
                    1.1,
-                   'Global CO2 concentration anomaly in ppm (1980-)',
+                   'Global CO2 concentration in ppm (1980-)',
                    fontsize=20,
                    transform=ax.transAxes)
 caption2 = ax.text(-0.11, 1.05,
@@ -127,7 +127,7 @@ ani = animation.FuncAnimation(
     fig,
     animate,
     init_func=init,
-    frames=len(data) + 10,
+    frames=len(data) + 50,
     blit=True,
     repeat=False)
 
@@ -135,5 +135,5 @@ print("Saving co2 gif ...")
 ani.save(
     'gifs/co2.gif',
     dpi=60,
-    fps=10,
+    fps=20,
     writer='imagemagick')

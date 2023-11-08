@@ -20,17 +20,12 @@ Center and circumference of plotting area represent 12 - 24 million km2 respecti
 
 All data obtained from [EUMETSAT OSI SAF](https://thredds.met.no/thredds/osisaf/osisaf_seaiceindex.html)
 
-<!--
 # Co2Tunnel
 
 ![Global-mean monthly CO2, polar plot](https://wvangeit.github.io/ClimateTunnel/co2.gif)
 
-Polar plot of global mean monthly CO2 dry air mole fraction in ppm for the period 1980-present.
+Polar plot of global mean monthly CO2 dry air mole fraction in ppm for the period 1979-present.
 
 Center and circumference of plotting area represent 320 and 420 ppm respectively.
 
 All data obtained from [NOAA Earth System Research Laboratory](https://www.esrl.noaa.gov/gmd/ccgg/trends/global.html)
-
-
-All data obtained from [ArctischePinguin](https://sites.google.com/site/arctischepinguin/home), [raw file](https://sites.google.com/site/arctischepinguin/home/sea-ice-extent-area/data/nsidc_global_nt_final_and_nrt.txt.gz)
--->

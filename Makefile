@@ -13,7 +13,7 @@ plot_ice: clean
 	curl -sL -o data/osisaf_glb_sia_monthly.nc https://thredds.met.no/thredds/fileServer/osisaf/met.no/ice/index/v2p2/glb/osisaf_glb_sia_monthly.nc
 	python seaicetunnel.py
 plot_co2: clean
-	curl -L -o data/co2_mm_gl.txt ftp://ftp.cmdl.noaa.gov/products/trends/co2/co2_mm_gl.txt
+	curl -sL -o data/co2_mm_gl.txt https://gml.noaa.gov/webdata/ccgg/trends/co2/co2_mm_gl.txt
 	python co2tunnel.py
 requirements:
 	pip install -qr requirements.txt
