@@ -1,3 +1,5 @@
 numpy
 matplotlib
 pandas
+xarray
+netcdf4

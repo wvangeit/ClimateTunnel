@@ -4,9 +4,10 @@
 
 import os
 import datetime
-
 import numpy
 import pandas
+import xarray
+import pathlib as pl
 
 import matplotlib
 matplotlib.use('Agg')
@@ -17,34 +18,31 @@ import matplotlib.pyplot as plt
 
 plt.style.use('ggplot')
 
-data_dir = 'data'
+data_dir = pl.Path('data')
 
-csv_filename = os.path.join(data_dir, 'nsidc_global_nt_final_and_nrt.txt')
+ncdf_filename = data_dir / 'osisaf_glb_sia_monthly.nc'
 
-data = pandas.read_csv(
-    csv_filename,
-    comment='#',
-    infer_datetime_format=True,
-    parse_dates=[0],
-    skipinitialspace=True)
+data = xarray.open_dataset(ncdf_filename).to_dataframe()
+print(data)
 
 dates_without_year = [
     datetime.date(
         1980,
-        x.month,
-        x.day) for x in data.loc[:, 'date']]
+        x[0].month,
+        x[0].day) for x in data.index]
+years = [x[0].year for x in data.index]
 
-years = [x.year for x in data.loc[:, 'date']]
 unique_years = [
     years[i] for i in range(len(years)) if i == years.index(years[i])]
 years = numpy.array(years)
 
-days_from_1jan = [(x.date() - datetime.date(x.year, 1, 1)).days
-                  for x in data.loc[:, 'date']]
+days_from_1jan = [(x[0].date() - datetime.date(x[0].year, 1, 1)).days
+                  for x in data.index]
 thetas = numpy.array([float(x) / 365 * 2 * numpy.pi
                       for x in days_from_1jan])
 
-areas = data['area'].values
+areas = data['sia'].values
+
 
 fig = plt.figure(figsize=(9, 9))
 
@@ -69,7 +67,7 @@ caption1 = ax.text(-0.11,
                    transform=ax.transAxes)
 caption2 = ax.text(-0.11,
                    1.025,
-                   'data: https://sites.google.com/site/arctischepinguin/\n'
+                   'data: https://thredds.met.no/thredds/osisaf/osisaf_seaiceindex.html\n'
                    'code: https://github.com/wvangeit/ClimateTunnel',
                    fontsize=10,
                    transform=ax.transAxes)
@@ -126,10 +124,10 @@ def animate(t):
 ani = animation.FuncAnimation(
     fig,
     animate,
-    frames=len(unique_years) + 30,
+    frames=len(unique_years) + 150,
     init_func=init,
     blit=True,
     repeat=False)
 
 print("Saving seaice gif ...")
-ani.save('gifs/seaice.gif', dpi=60, writer='imagemagick')
+ani.save('gifs/seaice.gif', dpi=60, fps=5, writer='imagemagick')
