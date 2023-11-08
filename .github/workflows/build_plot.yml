@@ -8,7 +8,10 @@ jobs:
   build:
     name: Build plot
     runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        plot_type: ["plot_temp", "plot_ice", "plot_co2"] 
     steps:
       - uses: actions/checkout@v4
-      - name: make
-        run: make plot
+      - name: make ${{ matrix.plot_type }}
+        run: make ${{ matrix.plot_type }}

@@ -23,7 +23,6 @@ data_dir = pl.Path('data')
 ncdf_filename = data_dir / 'osisaf_glb_sia_monthly.nc'
 
 data = xarray.open_dataset(ncdf_filename).to_dataframe()
-print(data)
 
 dates_without_year = [
     datetime.date(
