@@ -1,0 +1,17 @@
+{
+    "editor.formatOnSave": true, // new
+    "black-formatter.args": [
+        "--line-length",
+        "79"
+    ],
+    "editor.codeActionsOnSave": {
+        "source.organizeImports": "explicit"
+    },
+    "[python]": {
+        "editor.defaultFormatter": "ms-python.black-formatter"
+    },
+    "isort.args": [
+        "--profile",
+        "black"
+    ]
+}
