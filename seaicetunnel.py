@@ -19,7 +19,7 @@ plt.style.use("ggplot")
 
 data_dir = pl.Path("data")
 
-ncdf_filename = data_dir / "osisaf_glb_sia_monthly.nc"
+ncdf_filename = data_dir / "ice_area_glb_sii-v3p0_monthly.nc"
 
 data = xarray.open_dataset(ncdf_filename, engine="netcdf4").to_dataframe()
 print(data)
